@@ -106,7 +106,7 @@ function NetworkStatus() {
   });
 
   useEffect(() => {
-    const HELIUS_API_KEY = 'd3e58f68-fe4b-4962-9973-6ba3a60a0381';
+    const HELIUS_API_KEY = 'process.snv.HELIUS_API_KEY';
 const HELIUS_ENDPOINT = `https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}`;
     const connection = new Connection(HELIUS_ENDPOINT);
     let interval: NodeJS.Timeout;
