@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 250 100% 63%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 185 100% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 250 100% 63%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 224 71% 4%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-hacker-bg text-hacker-text-primary antialiased font-mono overflow-hidden;
+    background-image: radial-gradient(circle at 50% 50%, #081325 0%, #050c15 100%);
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(67, 217, 255, 0.05);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(153, 69, 255, 0.3);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(153, 69, 255, 0.5);
+  }
+
+  /* Better focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-hacker-cyan ring-offset-2 ring-offset-hacker-bg;
+  }
+
+  /* Text selection styling */
+  ::selection {
+    @apply bg-hacker-purple/40 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-hacker-panel/90 border border-hacker-border rounded-md shadow-neon-purple hover:shadow-neon-cyan transition-shadow duration-300;
+  }
+
+  .cosmic-badge {
+    @apply flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-hacker-panel border border-hacker-border shadow-neon-purple;
+  }
+
+  .status-healthy {
+    @apply text-hacker-green border-hacker-green/30 bg-hacker-green-muted;
+  }
+
+  .status-warning {
+    @apply text-amber-400 border-amber-500/30 bg-amber-500/10;
+  }
+
+  .status-critical {
+    @apply text-hacker-red border-hacker-red/30 bg-hacker-red-muted;
+  }
+
+  .particle {
+    @apply absolute rounded-full bg-hacker-cyan/20 pointer-events-none animate-particle-flow;
+  }
+  
+  .terminal-header {
+    @apply font-display tracking-wide uppercase text-hacker-purple font-bold;
+    text-shadow: 0 0 5px theme('colors.hacker.purple.glow');
+  }
+  
+  .terminal-text {
+    @apply font-mono text-hacker-text-primary;
+  }
+  
+  .cyber-button {
+    @apply relative overflow-hidden px-5 py-2 bg-transparent border border-hacker-purple text-hacker-purple hover:text-white transition-colors duration-300 font-display tracking-wider uppercase text-xs font-bold;
+  }
+  
+  .cyber-button::before {
+    @apply content-[''] absolute inset-0 bg-hacker-purple scale-x-0 origin-left transition-transform duration-300;
+  }
+  
+  .cyber-button:hover::before {
+    @apply scale-x-100;
+  }
+  
+  .cyber-button-content {
+    @apply relative z-10;
+  }
+  
+  .matrix-bg {
+    @apply bg-matrix-effect animate-matrix-flow;
+  }
+  
+  .cyber-grid {
+    @apply after:content-[''] after:absolute after:inset-0 after:bg-cyber-grid after:bg-grid after:animate-grid-scroll after:opacity-20 after:z-[-1];
+  }
+  
+  .glitch-text {
+    @apply relative;
+  }
+  
+  .glitch-text::before, .glitch-text::after {
+    @apply content-[attr(data-text)] absolute left-0 top-0 w-full h-full;
+  }
+  
+  .glitch-text::before {
+    @apply text-hacker-cyan left-[2px] animation-delay-100 animate-glitch;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+  
+  .glitch-text::after {
+    @apply text-hacker-purple left-[-2px] animation-delay-200 animate-glitch;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+  
+  .neon-border {
+    @apply border border-hacker-cyan animate-breathe;
+  }
+  
+  .scan-line {
+    @apply absolute inset-0 z-10 pointer-events-none overflow-hidden opacity-10;
+  }
+  
+  .scan-line::before {
+    @apply content-[''] absolute w-full h-[10px] bg-white/50 animate-scan-line;
+  }
+}
