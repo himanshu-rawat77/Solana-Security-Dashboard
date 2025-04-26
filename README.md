@@ -9,7 +9,7 @@ A comprehensive open-source platform for monitoring, analyzing, and reporting on
 The Solana Security Dashboard serves as a public resource for the Solana community to understand security trends, access historical data about exploits, follow best practices, and receive real-time alerts about ongoing security incidents.
 
 ## Project Demo 
-[![SOLCuardian]([https://www.youtube.com/watch?v=video-id)](https://youtu.be/i3VjNOUQZDE))
+https://www.youtube.com/watch?v=i3VjNOUQZDE
 
 ### Core Features
 
