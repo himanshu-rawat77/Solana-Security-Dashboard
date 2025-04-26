@@ -66,7 +66,7 @@ https://www.youtube.com/watch?v=i3VjNOUQZDE
 - Security resource hub
 - Project documentation
 
-### Phase 2: Monitoring System
+### Phase 2: Monitoring System ( In Development)
 - On-chain transaction monitoring ✅
 - Alert system implementation
 - Social media signal integration
